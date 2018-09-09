@@ -8,9 +8,11 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.dawn.annotation.view.GSBind;
+
 public class MainActivity extends AppCompatActivity {
 
-//    @GSBind(R.id.message)
+    @GSBind(R.id.message)
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
