@@ -13,7 +13,7 @@ import com.dawn.annotation.view.GSBind;
 public class MainActivity extends AppCompatActivity {
 
     @GSBind(R.id.message)
-    private TextView mTextMessage;
+    public TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {

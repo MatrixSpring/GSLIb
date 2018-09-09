@@ -1,4 +1,4 @@
-package com.dawn.api.view.api;
+package com.dawn.api.view;
 
 import android.app.Activity;
 
