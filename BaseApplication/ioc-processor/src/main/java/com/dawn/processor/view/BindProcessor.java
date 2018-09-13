@@ -123,18 +123,19 @@ public class BindProcessor extends AbstractProcessor {
     public String generateJavaCode(String mPackageName,String mProxyClassName,String className, List<VariableElement> cacheElements){
         StringBuilder builder = new StringBuilder();
         builder.append("package " + mPackageName).append(";\n\n");
-        builder.append("import com.dawn.api.view.annotation.*;\n");
+        builder.append("import com.dawn.api.view.*;\n");
         builder.append("public class ");
         builder.append(mProxyClassName);
         builder.append(" implements " + SUFFIX + "<" + className + ">");
-        builder.append("\n{\n");
+        builder.append("{\n\n");
         generateMethod(builder,className,cacheElements);
         builder.append("\n}\n");
         return builder.toString();
     }
 
     private void generateMethod(StringBuilder builder,String className, List<VariableElement> cacheElements){
-        builder.append("public void bind("+className+" target  ){");
+        builder.append("\t");
+        builder.append("public void bind("+className+" target){");
         builder.append("\n");
         //处理所有的成员属性
         for(VariableElement element :cacheElements){
@@ -142,6 +143,7 @@ public class BindProcessor extends AbstractProcessor {
             String filedName = element.getSimpleName().toString();
             TypeMirror typeMirror = element.asType();
             int id = bindView.value();
+            builder.append("\t\t");
             builder.append("target.");
             builder.append(filedName );
             builder.append("= (");
@@ -153,7 +155,7 @@ public class BindProcessor extends AbstractProcessor {
             builder.append("\n");
 
         }
-        builder.append("}\n");
+        builder.append("\t}\n");
     }
 
     private String getPackageName(VariableElement variableElement){
