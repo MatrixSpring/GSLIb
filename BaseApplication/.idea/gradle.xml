@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app-login" />
             <option value="$PROJECT_DIR$/ioc-annotation" />
             <option value="$PROJECT_DIR$/ioc-api" />
             <option value="$PROJECT_DIR$/ioc-processor" />

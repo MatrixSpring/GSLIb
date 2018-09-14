@@ -68,7 +68,7 @@ public class IntercepterProcessor extends AbstractProcessor {
         }
 
         //生成类继承和实现接口
-        ClassName routerAssistClassName = ClassName.get("com.drouter.api.action", "IRouterInterceptor");
+        ClassName routerAssistClassName = ClassName.get("com.dawn.api.router.action", "IRouterInterceptor");
         ClassName mapClassName = ClassName.get("java.util", "Map");
         TypeSpec.Builder classBuilder = TypeSpec.classBuilder("DRouter$$Interceptor$$" + moduleName).
                 addModifiers(Modifier.FINAL,Modifier.PUBLIC)
@@ -114,7 +114,7 @@ public class IntercepterProcessor extends AbstractProcessor {
                 .addAnnotation(Override.class)
                 .returns(List.class)
                 .addModifiers(Modifier.PUBLIC, Modifier.FINAL);
-        unbindMethodBuilder.addStatement("return $T.getInterceptorClasses(interceptors)", ClassName.get("com.drouter.api.utils", "MapUtils"));
+        unbindMethodBuilder.addStatement("return $T.getInterceptorClasses(interceptors)", ClassName.get("com.dawn.api.utils", "MapUtils"));
 
         classBuilder.addMethod(constructorMethodBuilder.build());
         classBuilder.addMethod(unbindMethodBuilder.build());

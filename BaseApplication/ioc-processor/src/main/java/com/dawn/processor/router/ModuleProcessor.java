@@ -66,7 +66,7 @@ public class ModuleProcessor extends AbstractProcessor {
         }
 
         // 生成类继承和实现接口
-        ClassName routerAssistClassName = ClassName.get("com.dawn.api.action", "IRouterModule");
+        ClassName routerAssistClassName = ClassName.get("com.dawn.api.router.action", "IRouterModule");
         ClassName mapClassName = ClassName.get("java.util", "Map");
         TypeSpec.Builder classBuilder = TypeSpec.classBuilder("GSRouter$$Module$$" + moduleName)
                 .addModifiers(Modifier.FINAL, Modifier.PUBLIC)
@@ -81,8 +81,8 @@ public class ModuleProcessor extends AbstractProcessor {
         Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(Action.class);
         Map<String,String> modules = new HashMap<>(elements.size());
 
-        ClassName actionWrapperClassName = ClassName.get("com.drouter.api.extra", "ActionWrapper");
-        ClassName threadModeClassName = ClassName.get("com.drouter.base", "ThreadMode");
+        ClassName actionWrapperClassName = ClassName.get("com.dawn.api.router.extra", "ActionWrapper");
+        ClassName threadModeClassName = ClassName.get("com.dawn.annotation", "ThreadMode");
         for(Element element : elements){
             //获取注解上面的action
             Action actionAnnotation = element.getAnnotation(Action.class);

@@ -1,7 +1,5 @@
 package com.dawn.api.router.result;
 
-import android.os.Build;
-
 /**
  * Created by dawn on 2018/9/13.
  */

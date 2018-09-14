@@ -1,4 +1,5 @@
 package com.dawn.api.router.thread;
 
-public class Poster {
+public interface Poster {
+    void enqueue(ActionPost actionPost);
 }
