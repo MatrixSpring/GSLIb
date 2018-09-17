@@ -29,8 +29,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation project(':lib-base')
-    implementation project(':ioc-api')
-    implementation project(':ioc-annotation')
-    annotationProcessor project(':ioc-processor')
+
+    implementation 'com.dawn.login:app.lib:1.0.0@aar'
+    annotationProcessor project(':drouter-compiler')
+
+//    implementation project(path: ':drouter-api')
 
 }

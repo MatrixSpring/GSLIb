@@ -39,6 +39,7 @@ public class IntercepterProcessor extends AbstractProcessor {
 
     @Override
     public synchronized void init(ProcessingEnvironment processingEnv) {
+        System.console().printf("processingEnv "+processingEnv);
         super.init(processingEnv);
         mFiler = processingEnv.getFiler();
         mElementUtils = processingEnv.getElementUtils();

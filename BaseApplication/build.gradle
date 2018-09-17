@@ -1,14 +1,18 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+
 buildscript {
     
     repositories {
         google()
         jcenter()
+        maven {
+            url 'http://127.0.0.1:8081/repository/maven-releases'  //这个路径就是Browse下maven-release右边有一个copy按钮，复制出来的。
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
-        
+        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -19,8 +23,13 @@ allprojects {
     repositories {
         google()
         jcenter()
+        //本地Maven仓库地址
+        maven {
+            url 'http://localhost:8081/repository/androidlib/'
+        }
     }
 }
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

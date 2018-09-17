@@ -1,1 +1,1 @@
-include ':app', ':lib-base', ':lib-core', ':ioc-processor', ':ioc-api', ':ioc-annotation', ':app-login'
+include ':app', ':lib-base', ':lib-core', ':app-login', ':app-login', ':app-user', ':app-gesture', 'drouter-api', ':drouter-base', ':drouter-compiler'
